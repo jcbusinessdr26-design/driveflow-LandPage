@@ -406,7 +406,7 @@ export default function App() {
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-2xl font-bold text-slate-500">R$</span>
                   <span className="text-6xl font-black text-white tracking-tighter">19,90</span>
-                  <span className="text-slate-500 font-bold">/mês</span>
+                  <span className="text-slate-500 font-bold ml-1 text-sm uppercase">Pagamento Único</span>
                 </div>
                 <p className="text-slate-400 font-medium">Controle completo.</p>
               </div>
@@ -419,7 +419,7 @@ export default function App() {
                   "Controle de combustível e manutenção",
                   "Monitoramento de km rodados",
                   "Relatórios de desempenho",
-                  "Cancele quando quiser"
+                  "Acesso Vitalício"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-base">
                     <div className="bg-emerald-500/10 rounded-full p-1 mt-0.5">
@@ -438,7 +438,7 @@ export default function App() {
                 onClick={() => window.open('https://pay.cakto.com.br/hrev4wd', '_blank')}
                 className="w-full py-5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/20 font-black rounded-2xl transition-all shadow-xl"
               >
-                👉 Assinar Plano
+                👉 Comprar Acesso
               </motion.button>
             </motion.div>
 
@@ -458,7 +458,7 @@ export default function App() {
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-2xl font-bold text-slate-500">R$</span>
                   <span className="text-6xl font-black text-emerald-400 tracking-tighter">27,90</span>
-                  <span className="text-slate-500 font-bold">/mês</span>
+                  <span className="text-slate-500 font-bold ml-1 text-sm uppercase">Pagamento Único</span>
                 </div>
                 <p className="text-slate-400 font-medium italic text-left">A experiência completa de gestão.</p>
               </div>
@@ -467,7 +467,7 @@ export default function App() {
                 {[
                   "Tudo do plano Básico",
                   "Metas de lucro avançadas",
-                  "Relatórios mensais completos",
+                  "Relatórios completos",
                   "Dicas inteligentes de economia",
                   "Suporte prioritário via WhatsApp",
                   "Acesso antecipado a novas funções",
@@ -490,7 +490,7 @@ export default function App() {
                 onClick={() => window.open('https://pay.cakto.com.br/nqb9269', '_blank')}
                 className="w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
               >
-                👉 Assinar Plano
+                👉 Comprar Acesso
               </motion.button>
             </motion.div>
           </div>
@@ -539,7 +539,7 @@ export default function App() {
               { q: "2. Quanto tempo leva por dia?", a: "Menos de 2 minutos. É só lançar os valores do dia e o app organiza tudo pra você." },
               { q: "3. Funciona para qualquer motorista de aplicativo?", a: "Sim. Serve para quem trabalha com qualquer plataforma ou até mais de uma ao mesmo tempo." },
               { q: "4. Eu realmente vou saber quanto estou lucrando?", a: "Sim. O app considera todos os custos e mostra exatamente quanto sobra no seu bolso." },
-              { q: "5. Posso cancelar quando quiser?", a: "Sim. Sem fidelidade. Você pode cancelar a qualquer momento." },
+              { q: "5. O acesso é vitalício?", a: "Sim. Uma vez adquirido, o acesso é seu para sempre, sem mensalidades ou renovações." },
               { q: "6. E se eu não gostar?", a: "Você tem 7 dias de garantia. Se não fizer sentido pra você, devolvemos 100% do valor." },
               { q: "7. Preciso usar todos os dias?", a: "Quanto mais você usa, mais precisão você tem. Mas o ideal é registrar diariamente para ter controle real." }
             ].map((faq, i) => (
