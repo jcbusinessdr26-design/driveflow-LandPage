@@ -1,4 +1,5 @@
-import { motion } from "motion/react";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { 
   TrendingUp, 
   Fuel, 
@@ -22,6 +23,20 @@ import {
 } from "lucide-react";
 
 export default function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   const scrollToPricing = () => {
     const element = document.getElementById('pricing');
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -91,21 +106,41 @@ export default function App() {
       {/* 2. VSL */}
       <section className="py-10 px-6 bg-slate-900/60">
         <div className="max-w-xl mx-auto">
-          {/* Video placeholder */}
-          <div className="group relative p-1 bg-gradient-to-b from-slate-800 to-slate-950 rounded-[2.5rem] shadow-2xl shadow-emerald-950/20 mb-8">
-            <div className="relative aspect-video w-full bg-slate-900 rounded-[2.25rem] border border-slate-800/50 flex items-center justify-center cursor-pointer overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900/40 to-emerald-500/10 z-0" />
-              <div className="relative z-10 flex flex-col items-center gap-4">
-                <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center text-slate-950 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-emerald-500/30">
-                  <Play fill="currentColor" size={32} className="ml-1.5" />
-                </div>
-                <p className="text-slate-300 font-bold text-lg">Assista antes de decidir</p>
-              </div>
-              <img 
-                src="https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?auto=format&fit=crop&q=80&w=800" 
-                alt="Video Thumbnail" 
-                className="absolute inset-0 w-full h-full object-cover opacity-30 -z-10 group-hover:scale-110 transition-transform duration-1000"
-              />
+          <div className="group relative p-1 bg-gradient-to-b from-slate-800 to-slate-950 rounded-[2.5rem] shadow-2xl shadow-emerald-950/20 mb-8 overflow-hidden">
+            <div 
+              className="relative aspect-video w-full bg-slate-950 rounded-[2.25rem] border border-slate-800/50 flex items-center justify-center cursor-pointer overflow-hidden"
+              onClick={togglePlay}
+            >
+              <video
+                ref={videoRef}
+                className="absolute inset-0 w-full h-full object-cover"
+                poster="https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?auto=format&fit=crop&q=80&w=800"
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
+                playsInline
+              >
+                <source src="https://res.cloudinary.com/dynjqdxw8/video/upload/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeos.
+              </video>
+
+              <AnimatePresence>
+                {!isPlaying && (
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-slate-950/40 backdrop-blur-[2px]"
+                  >
+                    <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center text-slate-950 scale-100 group-hover:scale-110 transition-all duration-500 shadow-xl shadow-emerald-500/40">
+                      <Play fill="currentColor" size={32} className="ml-1.5" />
+                    </div>
+                    <p className="mt-4 text-white font-black text-xl tracking-tight drop-shadow-lg">Assista agora</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Progress bar (optional visual) */}
+              <div className="absolute bottom-0 left-0 h-1 bg-emerald-500 z-20 transition-all duration-300" style={{ width: '0%' }} />
             </div>
           </div>
         </div>
