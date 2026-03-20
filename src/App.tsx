@@ -71,7 +71,7 @@ export default function App() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl md:text-6xl font-black leading-[1.05] mb-4 tracking-tighter">
-              Descubra quanto você<br />
+              Descubra quanto você <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-200">realmente lucra</span> dirigindo.
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 mb-8 leading-relaxed font-semibold">
@@ -90,8 +90,16 @@ export default function App() {
             <div className="flex flex-col gap-4">
               <motion.button 
                 onClick={scrollToPricing}
+                initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                animate={{ scale: [1, 1.08, 1] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  repeatType: "reverse"
+                }}
                 className="w-full py-5 px-8 bg-emerald-500 text-slate-950 font-black text-xl rounded-2xl hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20 mb-8"
               >
                 Quero saber quanto realmente estou lucrando
@@ -102,7 +110,7 @@ export default function App() {
       </section>
 
       {/* 2. VSL */}
-      <section className="py-10 px-6 bg-slate-900/60">
+      <section className="py-8 px-6 bg-slate-900/60">
         <div className="max-w-xl mx-auto text-center">
           <div className="group relative p-1 bg-gradient-to-b from-slate-800 to-slate-950 rounded-[2.5rem] shadow-2xl shadow-emerald-950/20 mb-8 overflow-hidden">
             <div 
@@ -142,7 +150,7 @@ export default function App() {
       </section>
 
       {/* 3. BLOCO DE IMPACTO */}
-      <section className="py-16 px-6 relative overflow-hidden bg-slate-950">
+      <section className="py-8 px-6 relative overflow-hidden bg-slate-950">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full -z-10" />
         <div className="max-w-xl mx-auto text-center">
           <motion.div
@@ -169,7 +177,7 @@ export default function App() {
       </section>
 
       {/* 4. QUEBRA DE CRENÇA */}
-      <section className="py-16 px-6 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-slate-900">
+      <section className="py-8 px-6 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-slate-900">
         <div className="max-w-xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight text-center uppercase tracking-tighter">
             Faturamento <span className="text-red-500">não é lucro.</span>
@@ -214,7 +222,7 @@ export default function App() {
       </section>
 
       {/* 5. ANTES VS DEPOIS */}
-      <section className="py-20 px-6 bg-slate-950 relative overflow-hidden text-center">
+      <section className="py-8 px-6 bg-slate-950 relative overflow-hidden text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-white uppercase tracking-tighter">
             Como é a sua <span className="text-emerald-400">realidade</span> hoje?
@@ -271,14 +279,14 @@ export default function App() {
       </section>
 
       {/* 6. APRESENTAÇÃO DO PRODUTO */}
-      <section className="py-20 px-6 relative overflow-hidden bg-emerald-500">
+      <section className="py-8 px-6 relative overflow-hidden bg-emerald-500">
         <div className="max-w-xl mx-auto text-slate-950 text-center relative">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
           >
             <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight">
-              DriverFlow: controle total<br/>na palma da sua mão
+              DriverFlow: controle total <br/>na palma da sua mão
             </h2>
             <div className="text-xl md:text-2xl font-bold mb-10 leading-relaxed text-slate-900/80 space-y-4">
               <p>O DriverFlow foi criado para transformar seus dados em clareza.</p>
@@ -289,7 +297,7 @@ export default function App() {
       </section>
 
       {/* 7. BENEFÍCIOS */}
-      <section className="py-20 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
+      <section className="py-8 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-white uppercase tracking-tighter">
@@ -324,7 +332,7 @@ export default function App() {
       </section>
 
       {/* 8. PROVA VISUAL - APP DEMO */}
-      <section className="py-10 px-6 bg-slate-950 overflow-hidden relative">
+      <section className="py-6 px-6 bg-slate-950 overflow-hidden relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full -z-10" />
         <div className="max-w-xl mx-auto text-center">
 
@@ -342,7 +350,7 @@ export default function App() {
       </section>
 
       {/* 9. SIMPLICIDADE */}
-      <section className="py-20 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
+      <section className="py-8 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
         <div className="max-w-xl mx-auto text-center">
           <motion.div
@@ -364,7 +372,7 @@ export default function App() {
       </section>
 
       {/* 10. PROVA SOCIAL */}
-      <section className="py-20 px-6 relative bg-slate-950 border-t border-slate-900">
+      <section className="py-8 px-6 relative bg-slate-950 border-t border-slate-900">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-4 text-white uppercase tracking-tighter">Quem usa, não volta atrás</h2>
@@ -410,7 +418,7 @@ export default function App() {
       </section>
 
       {/* 11. PARA QUEM É */}
-      <section className="py-20 px-6 bg-slate-900/40 relative border-t border-slate-900">
+      <section className="py-8 px-6 bg-slate-900/40 relative border-t border-slate-900">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent" />
         <div className="max-w-xl mx-auto relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-white uppercase tracking-tighter">Para quem é o <br /><span className="text-emerald-400">DriverFlow?</span></h2>
@@ -435,7 +443,7 @@ export default function App() {
       </section>
 
       {/* 12. BÔNUS */}
-      <section className="py-20 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+      <section className="py-8 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-black uppercase tracking-[0.2em] rounded-full mb-4 border border-emerald-500/20">
@@ -467,7 +475,7 @@ export default function App() {
       </section>
 
       {/* 13. OFERTA */}
-      <section id="pricing" className="py-20 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+      <section id="pricing" className="py-8 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
         <div className="max-w-xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">
             O valor que você recupera no <br/><span className="text-emerald-400">primeiro dia de uso.</span>
@@ -511,10 +519,16 @@ export default function App() {
               </ul>
               
               <motion.button 
+                initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={{ scale: [1, 1.03, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ scale: [1, 1.08, 1] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  repeatType: "reverse"
+                }}
                 onClick={() => window.open('https://pay.cakto.com.br/hrev4wd', '_blank')}
                 className="w-full py-5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/20 font-black rounded-2xl transition-all shadow-xl"
               >
@@ -563,10 +577,16 @@ export default function App() {
               </ul>
               
               <motion.button 
+                initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={{ scale: [1, 1.03, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                animate={{ scale: [1, 1.08, 1] }}
+                transition={{ 
+                  duration: 1.5, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  repeatType: "reverse"
+                }}
                 onClick={() => window.open('https://pay.cakto.com.br/nqb9269', '_blank')}
                 className="w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
               >
@@ -578,7 +598,7 @@ export default function App() {
       </section>
 
       {/* 14. GARANTIA */}
-      <section className="py-20 px-6 bg-slate-900/50 overflow-hidden relative border-t border-slate-900">
+      <section className="py-8 px-6 bg-slate-900/50 overflow-hidden relative border-t border-slate-900">
         <div className="max-w-xl mx-auto flex flex-col items-center text-center">
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
@@ -602,7 +622,7 @@ export default function App() {
       </section>
 
       {/* 15. FAQ */}
-      <section className="py-20 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+      <section className="py-8 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-16">
              <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter text-center">Dúvidas Frequentes</h2>
@@ -633,7 +653,7 @@ export default function App() {
       </section>
 
       {/* 16. WHATSAPP */}
-      <section className="py-20 px-6 bg-emerald-500 relative overflow-hidden text-center">
+      <section className="py-8 px-6 bg-emerald-500 relative overflow-hidden text-center">
         <div className="max-w-xl mx-auto relative z-10 text-slate-950">
           <div className="w-16 h-16 bg-slate-950 text-emerald-500 rounded-[1.5rem] flex items-center justify-center mx-auto mb-8 shadow-2xl">
             <MessageSquare size={32} />
@@ -643,8 +663,16 @@ export default function App() {
             Se ainda tem alguma dúvida, mande um "Oi" no nosso WhatsApp que te ajudamos.
           </p>
           <motion.button 
+            initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            animate={{ scale: [1, 1.08, 1] }}
+            transition={{ 
+              duration: 1.5, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              repeatType: "reverse"
+            }}
             onClick={() => window.open('https://wa.me/5531992440099?text=Olá,%20quero%20entender%20melhor%20como%20o%20DriverFlow%20pode%20me%20ajudar%20a%20saber%20quanto%20realmente%20estou%20lucrando.', '_blank')}
             className="w-full py-6 px-8 bg-slate-950 text-white font-black text-2xl rounded-[2rem] hover:brightness-110 transition-all shadow-2xl flex items-center justify-center gap-3"
           >
@@ -654,7 +682,7 @@ export default function App() {
       </section>
 
       {/* 17. FECHAMENTO */}
-      <section className="py-24 px-6 relative overflow-hidden bg-slate-950 border-t border-slate-900">
+      <section className="py-8 px-6 relative overflow-hidden bg-slate-950 border-t border-slate-900">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
         <div className="max-w-xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.05] text-white uppercase tracking-tighter">
@@ -665,10 +693,16 @@ export default function App() {
           </p>
           <motion.button 
             onClick={scrollToPricing}
+            initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            animate={{ scale: [1, 1.03, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ scale: [1, 1.08, 1] }}
+            transition={{ 
+              duration: 1.5, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              repeatType: "reverse"
+            }}
             className="w-full py-7 px-12 bg-emerald-500 text-slate-950 font-black text-2xl rounded-[2.5rem] hover:bg-emerald-400 transition-all shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] shadow-emerald-500/30"
           >
             Quero saber quanto realmente estou lucrando
