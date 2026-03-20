@@ -50,9 +50,10 @@ export default function App() {
         <div className="max-w-xl mx-auto flex items-center justify-center text-center">
           <div className="flex items-center gap-1">
             <img 
-              src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773792023/Design_sem_nome-removebg-preview_oihelx.png" 
+              src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773792023/Design_sem_nome-removebg-preview_oihelx.png" 
               alt="DriverFlow Logo" 
               className="w-12 h-12 object-contain"
+              fetchpriority="high"
             />
             <span className="font-black text-2xl tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400 uppercase">DriverFlow</span>
           </div>
@@ -79,9 +80,10 @@ export default function App() {
             </p>
 
             <motion.img 
-              src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773824346/Gemini_Generated_Image_wh36aiwh36aiwh36-_1__hi7qhr.webp"
+              src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773824346/Gemini_Generated_Image_wh36aiwh36aiwh36-_1__hi7qhr.webp"
               alt="Motorista usando o DriverFlow"
               className="max-w-md md:max-w-xl mx-auto mb-8 w-full h-auto rounded-[2.5rem] shadow-2xl"
+              fetchpriority="high"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
@@ -120,12 +122,13 @@ export default function App() {
               <video
                 ref={videoRef}
                 className="absolute inset-0 w-full h-full object-cover"
-                poster="https://res.cloudinary.com/dynjqdxw8/video/upload/so_0/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.jpg"
+                poster="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.jpg"
+                preload="none"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 playsInline
               >
-                <source src="https://res.cloudinary.com/dynjqdxw8/video/upload/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dynjqdxw8/video/upload/q_auto,vc_auto/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.mp4" type="video/mp4" />
                 Seu navegador não suporta vídeos.
               </video>
 
@@ -338,9 +341,11 @@ export default function App() {
 
           <h2 className="text-3xl md:text-4xl font-black mb-10 text-white text-center">Veja como é na prática</h2>
           <motion.img 
-            src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773856069/ChatGPT-Image-18-de-mar.-de-2026_-14_45_41-_1__ggsh6z.webp"
+            src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773856069/ChatGPT-Image-18-de-mar.-de-2026_-14_45_41-_1__ggsh6z.webp"
             alt="Dashboard DriverFlow"
             className="w-full h-auto max-w-xl mx-auto rounded-[2.5rem] shadow-2xl border border-slate-800 shadow-emerald-500/10"
+            loading="lazy"
+            decoding="async"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -400,7 +405,7 @@ export default function App() {
               >
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-emerald-500/20">
-                    <img src={`https://i.pravatar.cc/150?u=${testi.seed}`} alt={testi.name} />
+                    <img src={`https://i.pravatar.cc/150?u=${testi.seed}`} alt={testi.name} loading="lazy" decoding="async" />
                   </div>
                   <div>
                     <h4 className="font-black text-xl text-white tracking-tight">{testi.name}</h4>
@@ -610,9 +615,11 @@ export default function App() {
             className="w-[15.6rem] h-[15.6rem] mb-5 flex items-center justify-center p-4 bg-white/5 rounded-full border border-white/5 shadow-2xl"
           >
             <img 
-              src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773801684/ChatGPT_Image_17_de_mar._de_2026__22_41_10-removebg-preview_cau976.webp" 
+              src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773801684/ChatGPT_Image_17_de_mar._de_2026__22_41_10-removebg-preview_cau976.webp" 
               alt="Selo de Garantia" 
               className="w-full h-full object-contain"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
           <h2 className="text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tighter text-center">Risco zero por 7 dias</h2>
@@ -719,9 +726,11 @@ export default function App() {
         <div className="max-w-xl mx-auto">
           <div className="flex items-center justify-center gap-1 mb-6">
             <img 
-              src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773792023/Design_sem_nome-removebg-preview_oihelx.png" 
+              src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773792023/Design_sem_nome-removebg-preview_oihelx.png" 
               alt="DriverFlow Logo" 
               className="w-10 h-10 object-contain"
+              loading="lazy"
+              decoding="async"
             />
             <span className="font-black text-2xl tracking-tighter text-white">DriverFlow</span>
           </div>
