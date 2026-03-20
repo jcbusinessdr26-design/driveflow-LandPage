@@ -518,7 +518,10 @@ export default function App() {
                 ))}
               </ul>
               
-              <motion.button 
+              <motion.a 
+                href="https://pay.cakto.com.br/hrev4wd"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -529,11 +532,10 @@ export default function App() {
                   ease: "easeInOut",
                   repeatType: "reverse"
                 }}
-                onClick={() => window.open('https://pay.cakto.com.br/hrev4wd', '_blank')}
-                className="w-full py-5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/20 font-black rounded-2xl transition-all shadow-xl"
+                className="block text-center w-full py-5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/20 font-black rounded-2xl transition-all shadow-xl"
               >
                 Quero começar a controlar meus ganhos agora
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Plano Premium */}
@@ -576,7 +578,10 @@ export default function App() {
                 ))}
               </ul>
               
-              <motion.button 
+              <motion.a 
+                href="https://pay.cakto.com.br/nqb9269"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -587,11 +592,10 @@ export default function App() {
                   ease: "easeInOut",
                   repeatType: "reverse"
                 }}
-                onClick={() => window.open('https://pay.cakto.com.br/nqb9269', '_blank')}
-                className="w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
+                className="block text-center w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
               >
                 Quero começar a controlar meus ganhos agora
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
         </div>
