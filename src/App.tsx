@@ -71,11 +71,11 @@ export default function App() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl md:text-6xl font-black leading-[1.05] mb-4 tracking-tighter">
-              Descubra quanto realmente<br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-200">sobra no seu bolso</span> depois de um dia rodando.
+              Descubra quanto você<br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-200">realmente lucra</span> dirigindo.
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 mb-8 leading-relaxed font-semibold">
-              Pare de trabalhar no escuro. Veja seu lucro real considerando <span className="text-emerald-400">todos os custos.</span>
+              O aplicativo de gestão financeira criado para motoristas de aplicativo que querem <span className="text-emerald-400">parar de trabalhar no escuro</span> e finalmente ter controle dos seus ganhos e gastos.
             </p>
 
             <motion.img 
@@ -92,11 +92,9 @@ export default function App() {
                 onClick={scrollToPricing}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={{ scale: [1, 1.03, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-full py-5 px-8 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-black text-xl rounded-2xl flex items-center justify-center gap-3 shadow-2xl shadow-emerald-500/25 group mb-8"
+                className="w-full py-5 px-8 bg-emerald-500 text-slate-950 font-black text-xl rounded-2xl hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20 mb-8"
               >
-                Começar agora <ChevronRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                Quero saber quanto realmente estou lucrando
               </motion.button>
             </div>
           </motion.div>
@@ -105,7 +103,7 @@ export default function App() {
 
       {/* 2. VSL */}
       <section className="py-10 px-6 bg-slate-900/60">
-        <div className="max-w-xl mx-auto">
+        <div className="max-w-xl mx-auto text-center">
           <div className="group relative p-1 bg-gradient-to-b from-slate-800 to-slate-950 rounded-[2.5rem] shadow-2xl shadow-emerald-950/20 mb-8 overflow-hidden">
             <div 
               className="relative aspect-video w-full bg-slate-950 rounded-[2.25rem] border border-slate-800/50 flex items-center justify-center cursor-pointer overflow-hidden"
@@ -114,7 +112,7 @@ export default function App() {
               <video
                 ref={videoRef}
                 className="absolute inset-0 w-full h-full object-cover"
-                poster="https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?auto=format&fit=crop&q=80&w=800"
+                poster="https://res.cloudinary.com/dynjqdxw8/video/upload/so_0/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.jpg"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 playsInline
@@ -138,36 +136,51 @@ export default function App() {
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              {/* Progress bar (optional visual) */}
-              <div className="absolute bottom-0 left-0 h-1 bg-emerald-500 z-20 transition-all duration-300" style={{ width: '0%' }} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. QUEBRA DE CRENÇA */}
-      <section className="py-8 px-6 bg-gradient-to-b from-slate-950 to-slate-900">
-        <div className="max-w-xl mx-auto">
+      {/* 3. BLOCO DE IMPACTO */}
+      <section className="py-16 px-6 relative overflow-hidden bg-slate-950">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full -z-10" />
+        <div className="max-w-xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-white uppercase tracking-tighter">
+              Você não precisa trabalhar mais.<br/>
+              <span className="text-red-500">Precisa parar de perder dinheiro sem perceber.</span>
+            </h2>
+            <div className="space-y-6 text-xl text-slate-400 leading-relaxed font-medium">
+              <p>O problema não é rodar o dia inteiro.</p>
+              <p>O problema é não saber quanto realmente sobra no final.</p>
+              <div className="p-8 bg-red-500/5 border border-red-500/20 rounded-[2.5rem] mt-8">
+                <p className="text-slate-200">
+                  Sem controle, qualquer valor parece lucro…<br/>
+                  <span className="text-red-400 font-bold">mas os custos vão comendo tudo.</span>
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-          <h2 className="text-4xl md:text-6xl font-black mb-6 leading-tight text-center">
+      {/* 4. QUEBRA DE CRENÇA */}
+      <section className="py-16 px-6 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-slate-900">
+        <div className="max-w-xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight text-center uppercase tracking-tighter">
             Faturamento <span className="text-red-500">não é lucro.</span>
           </h2>
 
-          <p className="text-slate-400 text-center text-xl leading-relaxed mb-4">
-            Você pode fazer <span className="text-white font-bold">R$300 no dia…</span> e ainda assim ganhar muito menos do que imagina.
-          </p>
-          <p className="text-slate-400 text-center text-xl leading-relaxed mb-8">
-            Porque os custos não aparecem no aplicativo:
-          </p>
-
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-4 mb-10">
             {[
-              { icon: <Fuel size={20} />, text: "Combustível", desc: "O maior vilão do seu bolso." },
-              { icon: <Wrench size={20} />, text: "Manutenção e desgaste", desc: "Seu carro precisa estar pronto para o trabalho." },
-              { icon: <Utensils size={20} />, text: "Alimentação", desc: "Durante as longas horas de trabalho." },
-              { icon: <Car size={20} />, text: "Desgaste do carro", desc: "Vida útil reduzida a cada km rodado." },
-              { icon: <Navigation size={20} />, text: "Aluguel", desc: "Quem aluga precisa bater a meta antes de lucrar." },
+              { icon: <Fuel size={20} />, text: "Combustível", desc: "Tira uma parte todos os dias do seu bolso." },
+              { icon: <Utensils size={20} />, text: "Alimentação", desc: "Entra como um gasto invisível que você nem percebe." },
+              { icon: <Wrench size={20} />, text: "Manutenção", desc: "Aparece quando você menos espera e limpa seu lucro." },
+              { icon: <Car size={20} />, text: "Aluguel do carro", desc: "Pode consumir grande parte do seu ganho real." },
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -175,127 +188,135 @@ export default function App() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 p-5 bg-slate-950/40 border border-slate-800/50 rounded-[1.5rem] hover:border-red-500/30 transition-colors"
+                className="flex items-start gap-4 p-6 bg-slate-950/60 border border-slate-800/50 rounded-[2rem] hover:border-red-500/30 transition-all group"
               >
-                <div className="w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center shrink-0">
+                <div className="w-14 h-14 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-inner">
                   {item.icon}
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-100">{item.text}</h4>
-                  <p className="text-base text-slate-500">{item.desc}</p>
+                  <h4 className="font-black text-xl text-slate-100 mb-1">{item.text}</h4>
+                  <p className="text-lg text-slate-500 leading-snug">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-10 p-8 bg-red-500/5 border border-red-500/20 rounded-[2rem] text-center relative overflow-hidden group">
-            <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <p className="text-red-400 font-black text-xl uppercase tracking-tighter relative z-10">
-              👉 No final… o que sobra é outra realidade.
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="p-8 bg-red-500/10 border-2 border-red-500/20 rounded-[2.5rem] text-center relative overflow-hidden group shadow-2xl shadow-red-500/5"
+          >
+            <p className="text-red-400 font-black text-2xl uppercase tracking-tighter relative z-10">
+              👉 Se você não acompanha isso… você está trabalhando no escuro.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 5. ANTES VS DEPOIS */}
+      <section className="py-20 px-6 bg-slate-950 relative overflow-hidden text-center">
+        <div className="max-w-xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-white uppercase tracking-tighter">
+            Como é a sua <span className="text-emerald-400">realidade</span> hoje?
+          </h2>
+
+          <div className="grid grid-cols-1 gap-8">
+            {/* ANTES */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="p-8 bg-slate-900/50 border border-red-500/20 rounded-[2.5rem] relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 p-4 bg-red-500/10 text-red-500 text-xs font-black uppercase tracking-widest rounded-bl-2xl">
+                Antes (Sem DriverFlow)
+              </div>
+              <ul className="space-y-4 mt-4">
+                {[
+                  "Trabalha o dia inteiro sem saber quanto lucrou",
+                  "Acha que ganhou bem… mas o dinheiro some",
+                  "Não sabe quanto precisa fazer por dia",
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-3 text-slate-400 text-lg font-medium leading-snug">
+                    <span className="text-red-500 font-bold">✕</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* DEPOIS */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="p-8 bg-emerald-500/5 border-2 border-emerald-500/30 rounded-[2.5rem] relative overflow-hidden shadow-2xl shadow-emerald-500/10"
+            >
+              <div className="absolute top-0 right-0 p-4 bg-emerald-500 text-slate-950 text-xs font-black uppercase tracking-widest rounded-bl-2xl">
+                Depois (Com DriverFlow)
+              </div>
+              <ul className="space-y-4 mt-4">
+                {[
+                  "Sabe exatamente quanto sobrou no final do dia",
+                  "Controla todos os custos",
+                  "Trabalha com meta e estratégia",
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-3 text-slate-100 text-lg font-bold leading-snug">
+                    <CheckCircle size={20} className="text-emerald-500 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 4. AGITAÇÃO DA DOR */}
-      <section className="py-8 px-6 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full -z-10" />
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-white">
-            Você trabalha 10, 12 horas por dia…<br/>
-            Enfrenta trânsito, corridas ruins, desgaste…
-          </h2>
-          <p className="text-slate-400 leading-relaxed text-xl mb-6">
-            E no final do mês ainda aperta pra pagar as contas.
-          </p>
-          <div className="p-8 bg-red-500/5 border border-red-500/20 rounded-[2rem] mb-6">
-            <p className="text-red-400 font-black text-2xl mb-2">👉 A verdade?</p>
-            <p className="text-slate-300 text-xl font-semibold">
-              Sem controle…<br/>
-              <span className="text-red-400 font-black">você pode estar pagando pra trabalhar.</span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. MECANISMO */}
-      <section className="py-10 px-6 bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
-        <div className="max-w-xl mx-auto text-center">
-
-          <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight text-white">
-            O problema não é<br/>
-            <span className="text-emerald-400">quanto você faz.</span>
-          </h2>
-          <p className="text-2xl md:text-3xl font-black text-white mb-6">
-            É não enxergar o seu <span className="text-emerald-400">lucro real</span> por dia e por KM.
-          </p>
-          <p className="text-slate-400 leading-relaxed text-xl">
-            Sem ver seus números de verdade…<br/>
-            <span className="text-slate-200 font-bold">você toma decisões no escuro.</span>
-          </p>
-        </div>
-      </section>
-
-      {/* 6. SOLUÇÃO */}
-      <section className="py-10 px-6 relative overflow-hidden bg-emerald-500">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-white/10 blur-[120px] rounded-full -z-10" />
+      {/* 6. APRESENTAÇÃO DO PRODUTO */}
+      <section className="py-20 px-6 relative overflow-hidden bg-emerald-500">
         <div className="max-w-xl mx-auto text-slate-950 text-center relative">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tight leading-tight">
-            DriverFlow: sua gestão<br/>na palma da mão
-          </h2>
-          <p className="text-xl md:text-2xl font-bold mb-6 leading-relaxed text-slate-950">
-            O aplicativo que mostra exatamente:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            {[
-              { label: "Quanto entrou", icon: <TrendingUp size={24} />, color: "text-emerald-400", bg: "bg-emerald-500/10" },
-              { label: "Quanto saiu", icon: <DollarSign size={24} />, color: "text-red-400", bg: "bg-red-500/10" },
-              { label: "Quanto sobrou", icon: <CheckCircle size={24} />, color: "text-blue-400", bg: "bg-blue-500/10" }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                whileHover={{ y: -5 }}
-                className="bg-slate-950 p-6 rounded-[2rem] shadow-xl border border-white/5 flex flex-col items-center group transition-all"
-              >
-                <div className={`${item.bg} ${item.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-4 shadow-inner group-hover:scale-110 transition-transform`}>
-                  {item.icon}
-                </div>
-                <span className="text-white font-black text-xl tracking-tight leading-tight">{item.label}</span>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-xl font-black leading-tight text-slate-950">
-            Sem planilhas &nbsp;·&nbsp; Sem complicação &nbsp;·&nbsp; Sem achismo
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+          >
+            <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight">
+              DriverFlow: controle total<br/>na palma da sua mão
+            </h2>
+            <div className="text-xl md:text-2xl font-bold mb-10 leading-relaxed text-slate-900/80 space-y-4">
+              <p>O DriverFlow foi criado para transformar seus dados em clareza.</p>
+              <p className="font-black text-slate-950">Sem planilhas. Sem conta manual. Sem complicação.</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 7. BENEFÍCIOS */}
-      <section className="py-8 px-6 bg-slate-900 overflow-hidden relative">
+      <section className="py-20 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
         <div className="max-w-xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-center text-white">Dirija com dados, <br /><span className="text-emerald-400">não com suposição.</span></h2>
-          <div className="space-y-6">
+          <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-white uppercase tracking-tighter">
+            Trabalhe com clareza, <br /><span className="text-emerald-400">lucro e estratégia.</span>
+          </h2>
+          <div className="space-y-4">
             {[
-              "Saiba seu lucro real todos os dias.",
-              "Descubra quanto custa cada KM rodado.",
-              "Controle total dos seus gastos.",
-              "Veja se o dia realmente valeu a pena.",
-              "Defina metas e acompanhe em tempo real.",
+              "Veja quanto realmente sobrou depois de todos os custos",
+              "Entenda quanto o combustível está impactando seu lucro",
+              "Saiba exatamente quanto falta para bater sua meta",
+              "Descubra quanto você ganha por km rodado",
+              "Tenha todos os seus gastos organizados em um só lugar",
+              "Veja rapidamente se o dia valeu a pena financeiramente",
+              "Pare de depender de anotações soltas ou planilhas confusas",
             ].map((benefit, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex gap-4 items-center p-5 bg-slate-950/50 border border-slate-800 rounded-3xl group hover:border-emerald-500/30 transition-all"
+                transition={{ delay: i * 0.05 }}
+                className="flex gap-4 items-center p-6 bg-slate-900/50 border border-slate-800 rounded-[2rem] group hover:border-emerald-500/30 transition-all shadow-lg"
               >
-                <div className="bg-emerald-500 rounded-xl p-1 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
-                  <CheckCircle size={14} className="text-slate-950" />
+                <div className="bg-emerald-500 rounded-xl p-1.5 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+                  <CheckCircle size={18} className="text-slate-950" />
                 </div>
-                <span className="text-slate-300 text-lg font-bold group-hover:text-white transition-colors">{benefit}</span>
+                <span className="text-slate-300 text-lg font-bold group-hover:text-white transition-colors leading-tight">{benefit}</span>
               </motion.div>
             ))}
           </div>
@@ -321,52 +342,45 @@ export default function App() {
       </section>
 
       {/* 9. SIMPLICIDADE */}
-      <section className="py-10 px-6 bg-slate-900 overflow-hidden relative">
+      <section className="py-20 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black mb-4 text-white text-center">Simples como deve ser</h2>
-          <p className="text-slate-400 mb-8 text-xl leading-relaxed text-center">
-            Você só precisa de <span className="text-emerald-400 font-bold">2 minutos</span> por dia.
-          </p>
-          <div className="grid grid-cols-1 gap-4">
-            {[
-              { icon: <FileText size={20}/>, text: "Sem planilhas complicadas" },
-              { icon: <TrendingUp size={20}/>, text: "Sem termos técnicos" },
-              { icon: <Wallet size={20}/>, text: "Sem complicação" },
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                whileHover={{ x: 10 }}
-                className="p-5 bg-slate-950/80 border border-slate-800 rounded-[2rem] flex items-center gap-5 group hover:border-emerald-500/30 transition-all"
-              >
-                <div className="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center shrink-0">
-                  {item.icon}
-                </div>
-                <span className="text-slate-300 font-bold text-lg leading-tight group-hover:text-white transition-colors">{item.text}</span>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+          >
+            <div className="w-16 h-16 bg-emerald-500/10 text-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-inner">
+              <CheckCircle size={32} />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">Simples como deve ser</h2>
+            <div className="text-xl md:text-2xl text-slate-400 mb-10 leading-relaxed font-medium space-y-2">
+              <p>Você só precisa de poucos minutos por dia.</p>
+              <p className="font-black text-emerald-400 uppercase tracking-tight">
+                Sem planilhas &nbsp;·&nbsp; Sem complicação &nbsp;·&nbsp; Sem perder tempo
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 10. PROVA SOCIAL */}
-      <section className="py-10 px-6 relative">
+      <section className="py-20 px-6 relative bg-slate-950 border-t border-slate-900">
         <div className="max-w-xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black mb-3 text-white">Quem usa, não volta atrás</h2>
-            <div className="flex justify-center gap-1 mb-3">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black mb-4 text-white uppercase tracking-tighter">Quem usa, não volta atrás</h2>
+            <div className="flex justify-center gap-1.5 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
+                <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
               ))}
             </div>
-            <p className="text-slate-500 text-lg font-medium">Prints reais de conversas com nossos usuários.</p>
+            <p className="text-slate-500 text-xl font-medium">Histórias reais de quem profissionalizou sua gestão.</p>
           </div>
           
           <div className="grid grid-cols-1 gap-8">
             {[
-              { id: 1, name: "Ricardo S.", city: "São Paulo", comment: "Achei que ganhava bem… hoje vejo o que realmente sobra. Mudou tudo.", seed: "driver1" },
-              { id: 2, name: "Ana Paula", city: "Rio de Janeiro", comment: "Só no combustível já economizei muito. O app me abriu os olhos.", seed: "driver2" },
-              { id: 3, name: "Marcos V.", city: "Curitiba", comment: "Agora sei exatamente quanto preciso fazer por dia pra bater minha meta.", seed: "driver3" }
+              { id: 1, name: "Ricardo S.", city: "São Paulo", comment: "Eu achava que estava ganhando bem… quando comecei a controlar, vi que quase metade ia embora nos custos.", seed: "driver1" },
+              { id: 2, name: "Ana Paula", city: "Rio de Janeiro", comment: "Só de organizar combustível e alimentação, já comecei a sobrar mais dinheiro.", seed: "driver2" },
+              { id: 3, name: "Marcos V.", city: "Curitiba", comment: "Hoje eu sei exatamente quanto preciso fazer por dia. Mudou totalmente minha forma de trabalhar.", seed: "driver3" }
             ].map((testi, i) => (
               <motion.div 
                 key={testi.id}
@@ -374,20 +388,20 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative group p-6 bg-slate-900 border border-slate-800 rounded-[2.5rem] shadow-xl"
+                className="relative group p-8 bg-slate-900 border border-slate-800 rounded-[2.5rem] shadow-xl hover:border-emerald-500/30 transition-all"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-500/20">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-emerald-500/20">
                     <img src={`https://i.pravatar.cc/150?u=${testi.seed}`} alt={testi.name} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white tracking-tight">{testi.name}</h4>
+                    <h4 className="font-black text-xl text-white tracking-tight">{testi.name}</h4>
                     <p className="text-sm text-emerald-500 font-bold uppercase tracking-widest">{testi.city}</p>
                   </div>
                 </div>
-                <p className="text-slate-300 text-lg italic leading-relaxed">"{testi.comment}"</p>
-                <div className="absolute top-6 right-8 text-emerald-500/10">
-                  <FileText size={48} strokeWidth={3} />
+                <p className="text-slate-300 text-xl italic leading-relaxed font-medium">"{testi.comment}"</p>
+                <div className="absolute top-8 right-10 text-emerald-500/5">
+                  <MessageSquare size={64} strokeWidth={3} />
                 </div>
               </motion.div>
             ))}
@@ -396,38 +410,69 @@ export default function App() {
       </section>
 
       {/* 11. PARA QUEM É */}
-      <section className="py-10 px-6 bg-slate-900/40 relative">
+      <section className="py-20 px-6 bg-slate-900/40 relative border-t border-slate-900">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent" />
         <div className="max-w-xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-4xl font-black mb-8 text-center text-white">Para quem é o <br /><span className="text-emerald-400">DriverFlow?</span></h2>
+          <h2 className="text-3xl md:text-5xl font-black mb-12 text-center text-white uppercase tracking-tighter">Para quem é o <br /><span className="text-emerald-400">DriverFlow?</span></h2>
           <div className="grid grid-cols-1 gap-4">
             {[
-              "Motoristas que trabalham todos os dias.",
-              "Quem paga aluguel de carro e precisa bater a meta.",
-              "Quem quer parar de trabalhar no escuro.",
-              "Quem quer mais controle financeiro de verdade.",
+              "Motoristas com carro próprio",
+              "Motoristas com carro alugado",
+              "Quem está começando no transporte por aplicativo",
+              "Quem já roda há tempo e quer melhorar seu lucro real",
             ].map((item, i) => (
               <motion.div 
                 key={i} 
                 whileHover={{ x: 10 }}
-                className="p-5 bg-slate-950/80 border border-slate-800 rounded-[2rem] flex items-center gap-5 group hover:border-emerald-500/30 transition-all"
+                className="p-6 bg-slate-950/80 border border-slate-800 rounded-[2rem] flex items-center gap-6 group hover:border-emerald-500/30 transition-all"
               >
-                <div className="w-3 h-3 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)] group-hover:scale-125 transition-transform" />
-                <span className="text-slate-300 font-bold text-lg leading-tight group-hover:text-white transition-colors">{item}</span>
+                <div className="w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.5)] group-hover:scale-125 transition-transform" />
+                <span className="text-slate-200 font-black text-xl leading-tight group-hover:text-white transition-colors uppercase tracking-tight">{item}</span>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 12. OFERTA */}
-      <section id="pricing" className="py-10 px-6 bg-slate-900 overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight text-center">Comece agora.</h2>
-            <p className="text-slate-400 text-xl text-center">O investimento que se paga no <span className="text-emerald-400 font-bold">primeiro abastecimento.</span></p>
+      {/* 12. BÔNUS */}
+      <section className="py-20 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-black uppercase tracking-[0.2em] rounded-full mb-4 border border-emerald-500/20">
+              Presente para você
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Bônus Exclusivos</h2>
           </div>
+          <div className="grid grid-cols-1 gap-6">
+            {[
+              { title: "Bônus 1: Controle de Metas Inteligente", desc: "Defina quanto quer ganhar e o app te diz exatamente o que falta." },
+              { title: "Bônus 2: Relatórios Automáticos", desc: "Veja seu desempenho semanal e mensal sem precisar calcular nada." }
+            ].map((bonus, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ y: -5 }}
+                className="p-8 bg-slate-900 border border-slate-800 rounded-[2.5rem] relative overflow-hidden group shadow-xl"
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-3xl group-hover:bg-emerald-500/20 transition-all" />
+                <h4 className="text-2xl font-black text-white mb-3 tracking-tight">{bonus.title}</h4>
+                <p className="text-lg text-slate-400 leading-relaxed font-medium">{bonus.desc}</p>
+                <div className="mt-4 flex items-center gap-2 text-emerald-500 font-bold uppercase tracking-widest text-xs">
+                   <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                   Incluso no acesso
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 13. OFERTA */}
+      <section id="pricing" className="py-20 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+        <div className="max-w-xl mx-auto text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">
+            O valor que você recupera no <br/><span className="text-emerald-400">primeiro dia de uso.</span>
+          </h2>
+          <p className="text-slate-400 mb-12 text-xl font-medium">Escolha o plano que faz mais sentido para o seu momento.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Plano Básico */}
@@ -473,7 +518,7 @@ export default function App() {
                 onClick={() => window.open('https://pay.cakto.com.br/hrev4wd', '_blank')}
                 className="w-full py-5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/20 font-black rounded-2xl transition-all shadow-xl"
               >
-                👉 Comprar Acesso
+                Quero começar a controlar meus ganhos agora
               </motion.button>
             </motion.div>
 
@@ -525,21 +570,20 @@ export default function App() {
                 onClick={() => window.open('https://pay.cakto.com.br/nqb9269', '_blank')}
                 className="w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
               >
-                👉 Comprar Acesso
+                Quero começar a controlar meus ganhos agora
               </motion.button>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 13. GARANTIA */}
-      <section className="pt-2 pb-10 px-6 bg-slate-900 overflow-hidden relative border-t border-slate-800">
+      {/* 14. GARANTIA */}
+      <section className="py-20 px-6 bg-slate-900/50 overflow-hidden relative border-t border-slate-900">
         <div className="max-w-xl mx-auto flex flex-col items-center text-center">
           <motion.div 
-            initial={{ scale: 0.8, opacity: 0, rotate: 0 }}
-            whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-96 h-64 -mt-6 mb-4 overflow-visible flex items-center justify-center"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            className="w-48 h-48 mb-6 flex items-center justify-center p-4 bg-white/5 rounded-full border border-white/5 shadow-2xl"
           >
             <img 
               src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773801684/ChatGPT_Image_17_de_mar._de_2026__22_41_10-removebg-preview_cau976.webp" 
@@ -547,43 +591,39 @@ export default function App() {
               className="w-full h-full object-contain"
             />
           </motion.div>
-          <h2 className="text-3xl font-black mb-4 text-white tracking-tight text-center">Teste sem risco por 7 dias</h2>
-          <p className="text-slate-400 leading-relaxed text-xl text-center">
-            Se você não tiver mais clareza sobre seus números…
-          </p>
-          <p className="text-emerald-400 font-black text-2xl mt-3">
-            👉 devolvemos 100% do seu dinheiro.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-black mb-6 text-white uppercase tracking-tighter text-center">Risco zero por 7 dias</h2>
+          <div className="text-slate-400 leading-relaxed text-xl text-center space-y-4 font-medium mb-8">
+            <p>Se você não tiver mais clareza sobre seus números em uma semana…</p>
+            <p className="text-emerald-400 font-black text-2xl uppercase tracking-tight">
+              A gente devolve o seu dinheiro.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* FAQ SECTION */}
-      <section className="py-16 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-             <div className="flex items-center gap-2 text-emerald-500 mb-4 justify-center">
-                <HelpCircle size={20} />
-                <span className="font-black uppercase tracking-[0.2em] text-sm text-center">Dúvidas</span>
-             </div>
-             <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight text-center">Perguntas Frequentes</h2>
+      {/* 15. FAQ */}
+      <section className="py-20 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+             <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter text-center">Dúvidas Frequentes</h2>
           </div>
 
           <div className="space-y-4">
             {[
-              { q: "1. Preciso entender de finanças para usar?", a: "Não. O DriverFlow foi feito para ser simples. Você só registra seus ganhos e gastos, e o app calcula tudo automaticamente." },
-              { q: "2. Quanto tempo leva por dia?", a: "Menos de 2 minutos. É só lançar os valores do dia e o app organiza tudo pra você." },
-              { q: "3. Funciona para qualquer motorista de aplicativo?", a: "Sim. Serve para quem trabalha com qualquer plataforma ou até mais de uma ao mesmo tempo." },
-              { q: "4. Eu realmente vou saber quanto estou lucrando?", a: "Sim. O app considera todos os custos e mostra exatamente quanto sobra no seu bolso." },
-              { q: "5. O acesso é vitalício?", a: "Sim. Uma vez adquirido, o acesso é seu para sempre, sem mensalidades ou renovações." },
-              { q: "6. E se eu não gostar?", a: "Você tem 7 dias de garantia. Se não fizer sentido pra você, devolvemos 100% do valor." },
-              { q: "7. Preciso usar todos os dias?", a: "Quanto mais você usa, mais precisão você tem. Mas o ideal é registrar diariamente para ter controle real." }
+              { q: "Preciso entender de finanças?", a: "Absolutamente não. O app foi feito para quem tem rotina corrida. É só lançar os valores e ele faz tudo." },
+              { q: "Tenho que pagar todo mês?", a: "Não. O acesso é único e vitalício. Você paga uma vez e usa para sempre." },
+              { q: "Funciona se eu usar Uber e 99?", a: "Sim! Você pode centralizar todos os seus ganhos de diferentes apps no DriverFlow." },
+              { q: "E se eu não gostar?", a: "Você tem 7 dias de garantia total. Se não gostar, devolvemos 100% sem burocracia." },
+              { q: "Preciso usar todos os dias?", a: "Quanto mais você usa, mais precisão você tem. Mas o ideal é registrar diariamente para ter controle real." }
             ].map((faq, i) => (
-              <details key={i} className="group bg-slate-900/50 border border-slate-800 rounded-3xl overflow-hidden hover:border-emerald-500/30 transition-colors">
+              <details key={i} className="group bg-slate-900/50 border border-slate-800 rounded-[2rem] overflow-hidden hover:border-emerald-500/30 transition-all shadow-lg">
                 <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                  <span className="text-lg font-bold text-slate-100 pr-4">{faq.q}</span>
-                  <ChevronDown size={20} className="text-emerald-500 group-open:rotate-180 transition-transform" />
+                  <span className="text-lg font-black text-slate-100 pr-4 uppercase tracking-tight">{faq.q}</span>
+                  <div className="bg-emerald-500/10 p-2 rounded-xl group-open:rotate-180 transition-transform">
+                    <ChevronDown size={20} className="text-emerald-500" />
+                  </div>
                 </summary>
-                <div className="px-6 pb-6 text-slate-400 text-lg leading-relaxed text-left">
+                <div className="px-6 pb-6 text-slate-400 text-lg leading-relaxed text-left font-medium">
                   {faq.a}
                 </div>
               </details>
@@ -592,59 +632,46 @@ export default function App() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="py-20 px-6 relative overflow-hidden bg-slate-950 border-t border-slate-900">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full -z-10" />
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 leading-[1.1] text-emerald-500 uppercase tracking-tight text-center">
-            Pare de dirigir sem saber seu lucro real.
+      {/* 16. WHATSAPP */}
+      <section className="py-20 px-6 bg-emerald-500 relative overflow-hidden text-center">
+        <div className="max-w-xl mx-auto relative z-10 text-slate-950">
+          <div className="w-16 h-16 bg-slate-950 text-emerald-500 rounded-[1.5rem] flex items-center justify-center mx-auto mb-8 shadow-2xl">
+            <MessageSquare size={32} />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tighter leading-tight">Quer falar com a gente?</h2>
+          <p className="text-xl md:text-2xl text-slate-900/80 mb-10 font-bold leading-relaxed">
+            Se ainda tem alguma dúvida, mande um "Oi" no nosso WhatsApp que te ajudamos.
+          </p>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://wa.me/5531992440099?text=Olá,%20quero%20entender%20melhor%20como%20o%20DriverFlow%20pode%20me%20ajudar%20a%20saber%20quanto%20realmente%20estou%20lucrando.', '_blank')}
+            className="w-full py-6 px-8 bg-slate-950 text-white font-black text-2xl rounded-[2rem] hover:brightness-110 transition-all shadow-2xl flex items-center justify-center gap-3"
+          >
+            Chamar no WhatsApp
+          </motion.button>
+        </div>
+      </section>
+
+      {/* 17. FECHAMENTO */}
+      <section className="py-24 px-6 relative overflow-hidden bg-slate-950 border-t border-slate-900">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent" />
+        <div className="max-w-xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-[1.05] text-white uppercase tracking-tighter">
+            Pare de dirigir no <span className="text-red-500">escuro.</span>
           </h2>
-          <p className="text-2xl font-bold mb-10 text-emerald-400/80 max-w-lg mx-auto leading-relaxed text-center">
-            Junte-se a centenas de motoristas que já profissionalizaram suas finanças com o DriverFlow.
+          <p className="text-xl md:text-2xl font-bold mb-12 text-slate-400 max-w-lg mx-auto leading-relaxed">
+            Descubra agora quanto você realmente ganha e profissionalize sua jornada.
           </p>
           <motion.button 
             onClick={scrollToPricing}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={{ scale: [1, 1.03, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-full py-6 px-12 bg-emerald-500 text-slate-950 font-black text-2xl rounded-[2.5rem] hover:bg-emerald-400 transition-all shadow-2xl shadow-emerald-500/20"
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-full py-7 px-12 bg-emerald-500 text-slate-950 font-black text-2xl rounded-[2.5rem] hover:bg-emerald-400 transition-all shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] shadow-emerald-500/30"
           >
-            Começar agora
-          </motion.button>
-          <div className="mt-10 flex items-center justify-center gap-3">
-            <div className="flex -space-x-3">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-emerald-500 bg-slate-800 overflow-hidden shadow-lg">
-                  <img src={`https://i.pravatar.cc/100?u=v${i}`} alt="user" />
-                </div>
-              ))}
-            </div>
-            <p className="text-sm font-black text-slate-400 uppercase tracking-widest">Acesso imediato</p>
-          </div>
-        </div>
-      </section>
-
-      {/* WHATSAPP SECTION */}
-      <section className="py-16 px-6 bg-slate-900 relative overflow-hidden text-center border-t border-slate-800">
-        <div className="max-w-2xl mx-auto relative z-10">
-          <div className="w-16 h-16 bg-emerald-500/10 text-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-inner">
-            <MessageSquare size={32} />
-          </div>
-          <h2 className="text-3xl font-black mb-4 text-white uppercase tracking-tight">Ainda com dúvida?</h2>
-          <p className="text-xl text-slate-400 mb-8 font-medium">
-            Fale direto com a gente no WhatsApp e entenda se o DriverFlow faz sentido para você.
-          </p>
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            animate={{ scale: [1, 1.03, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            onClick={() => window.open('https://wa.me/5531992440099?text=Olá,%20quero%20entender%20melhor%20como%20o%20DriverFlow%20pode%20me%20ajudar%20a%20saber%20quanto%20realmente%20estou%20lucrando.', '_blank')}
-            className="w-full py-6 px-8 bg-[#25D366] text-white font-black text-2xl rounded-[2.5rem] hover:brightness-110 transition-all shadow-2xl shadow-emerald-500/10 flex items-center justify-center gap-3"
-          >
-            <MessageSquare size={28} />
-            Tirar dúvidas no WhatsApp
+            Quero saber quanto realmente estou lucrando
           </motion.button>
         </div>
       </section>
