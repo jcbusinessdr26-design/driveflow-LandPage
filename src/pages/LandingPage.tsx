@@ -401,12 +401,12 @@ export default function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative group bg-slate-900 border border-slate-800 rounded-[2.5rem] shadow-xl hover:border-emerald-500/30 transition-all overflow-hidden p-2"
+                className="relative w-full overflow-hidden rounded-2xl shadow-2xl"
               >
                 <img 
                   src={src} 
                   alt={`Depoimento de motorista parceiro ${i + 1}`} 
-                  className="w-full h-auto rounded-[2.25rem] object-cover shadow-inner"
+                  className="w-full h-auto object-cover"
                   loading="lazy"
                   decoding="async"
                 />
