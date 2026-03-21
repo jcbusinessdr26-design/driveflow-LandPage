@@ -389,33 +389,27 @@ export default function App() {
             <p className="text-slate-500 text-xl font-medium">Histórias reais de quem profissionalizou sua gestão.</p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 gap-6">
             {[
-              { id: 1, name: "Ricardo S.", city: "São Paulo", comment: "Eu achava que estava ganhando bem… quando comecei a controlar, vi que quase metade ia embora nos custos.", seed: "driver1" },
-              { id: 2, name: "Ana Paula", city: "Rio de Janeiro", comment: "Só de organizar combustível e alimentação, já comecei a sobrar mais dinheiro.", seed: "driver2" },
-              { id: 3, name: "Marcos V.", city: "Curitiba", comment: "Hoje eu sei exatamente quanto preciso fazer por dia. Mudou totalmente minha forma de trabalhar.", seed: "driver3" }
-            ].map((testi, i) => (
+              "https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1774053151/depoimento_1_drive_flow_jr6bpc.jpg",
+              "https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1774053151/depoimento_2_drive_flow_oaihoy.jpg",
+              "https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1774053150/depoimento_3_drive_flow_mfvpr4.jpg"
+            ].map((src, i) => (
               <motion.div 
-                key={testi.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative group p-8 bg-slate-900 border border-slate-800 rounded-[2.5rem] shadow-xl hover:border-emerald-500/30 transition-all"
+                className="relative group bg-slate-900 border border-slate-800 rounded-[2.5rem] shadow-xl hover:border-emerald-500/30 transition-all overflow-hidden p-2"
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-emerald-500/20">
-                    <img src={`https://i.pravatar.cc/150?u=${testi.seed}`} alt={testi.name} loading="lazy" decoding="async" />
-                  </div>
-                  <div>
-                    <h4 className="font-black text-xl text-white tracking-tight">{testi.name}</h4>
-                    <p className="text-sm text-emerald-500 font-bold uppercase tracking-widest">{testi.city}</p>
-                  </div>
-                </div>
-                <p className="text-slate-300 text-xl italic leading-relaxed font-medium">"{testi.comment}"</p>
-                <div className="absolute top-8 right-10 text-emerald-500/5">
-                  <MessageSquare size={64} strokeWidth={3} />
-                </div>
+                <img 
+                  src={src} 
+                  alt={`Depoimento de motorista parceiro ${i + 1}`} 
+                  className="w-full h-auto rounded-[2.25rem] object-cover shadow-inner"
+                  loading="lazy"
+                  decoding="async"
+                />
               </motion.div>
             ))}
           </div>
