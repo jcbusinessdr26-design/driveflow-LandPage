@@ -95,8 +95,8 @@ export default function PostPurchase() {
                  <p className="text-slate-400 text-sm">Acesse o aplicativo pelo seu celular ou computador.</p>
               </div>
               <a 
-                href="https://driverflow.site" // Adaptar para a URL real do app principal
-                className="block w-full py-4 bg-emerald-500 text-slate-950 font-black rounded-xl hover:bg-emerald-400 transition-all shadow-lg"
+                href="https://driverflowapp.online"
+                className="block text-center w-full py-4 bg-emerald-500 text-slate-950 font-black rounded-xl hover:bg-emerald-400 transition-all shadow-lg"
               >
                 Ir para o Aplicativo
               </a>
