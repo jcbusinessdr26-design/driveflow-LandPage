@@ -122,7 +122,7 @@ export default function App() {
               <video
                 ref={videoRef}
                 className="absolute inset-0 w-full h-full object-cover"
-                poster="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.jpg"
+                poster="https://res.cloudinary.com/dynjqdxw8/video/upload/f_jpg,q_auto/v1773973696/Mini_vsl_Driver_flow_pronta_1_wnrnri.jpg"
                 preload="none"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
