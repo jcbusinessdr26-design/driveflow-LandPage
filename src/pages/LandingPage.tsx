@@ -495,10 +495,10 @@ export default function App() {
                   <span className="text-6xl font-black text-white tracking-tighter">19,90</span>
                   <span className="text-slate-500 font-bold ml-1 text-sm uppercase">Pagamento Único</span>
                 </div>
-                <p className="text-slate-400 font-medium">Controle completo.</p>
+                <p className="text-slate-400 font-medium text-left">Controle completo.</p>
               </div>
               
-              <ul className="space-y-2.5 mb-8 flex-grow">
+              <ul className="space-y-2.5 mb-8 flex-grow text-left">
                 {[
                   "Acesso completo ao DriverFlow",
                   "Dashboard de lucro em tempo real",
