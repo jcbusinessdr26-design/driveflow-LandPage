@@ -456,7 +456,7 @@ export default function App() {
           </div>
           
           <motion.img 
-            src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773856069/ChatGPT-Image-18-de-mar.-de-2026_-14_45_41-_1__ggsh6z.webp"
+            src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1773824346/Gemini_Generated_Image_wh36aiwh36aiwh36-_1__hi7qhr.webp"
             alt="Dashboard DriverFlow"
             className="w-full h-auto max-w-xl mx-auto rounded-[2.5rem] shadow-2xl border border-slate-800 shadow-emerald-500/10"
             loading="lazy"
@@ -570,37 +570,7 @@ export default function App() {
                   decoding="async"
                 />
               </motion.div>
-            ))}
-          </div>
-          
-          <div className="mt-8 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl text-center">
-            <p className="text-slate-300 text-lg font-medium italic">"Antes eu olhava só o bruto e achava que estava tudo certo. Agora eu vejo quanto realmente sobrou e quanto falta para minha meta."</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 12. PARA QUEM É */}
-      <section className="py-8 px-6 bg-slate-900/40 relative border-t border-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent" />
-        <div className="max-w-xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-8 text-center text-white uppercase tracking-tighter">Para quem é o <br /><span className="text-emerald-400">DriverFlow?</span></h2>
-          <div className="grid grid-cols-1 gap-3">
-            {[
-              "Motoristas com carro próprio",
-              "Motoristas com carro alugado",
-              "Quem está começando no app",
-              "Quem já roda há tempo e quer parar de trabalhar no escuro",
-              "Quem quer entender o lucro real e tomar decisões melhores"
-            ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                whileHover={{ x: 10 }}
-                className="p-6 bg-slate-950/80 border border-slate-800 rounded-[2rem] flex items-center gap-6 group hover:border-emerald-500/30 transition-all"
-              >
-                <div className="w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.5)] group-hover:scale-125 transition-transform" />
-                <span className="text-slate-200 font-black text-xl leading-tight group-hover:text-white transition-colors uppercase tracking-tight">{item}</span>
-              </motion.div>
-            ))}
+))}
           </div>
         </div>
       </section>
