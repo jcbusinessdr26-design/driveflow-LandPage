@@ -491,17 +491,61 @@ export default function App() {
         </div>
       </section>
 
-      {/* 10. PROVA SOCIAL */}
+      {/* 10. BLOCO DE EXEMPLO REAL */}
+      <section className="py-8 px-6 bg-slate-900/40 relative overflow-hidden border-t border-slate-900">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-black mb-8 text-white uppercase tracking-tighter">
+            Exemplo de um dia registrado
+          </h2>
+          
+          <div className="p-8 bg-slate-950 border border-slate-800 rounded-[3rem] shadow-2xl mb-6">
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="p-4 bg-slate-900/50 rounded-2xl">
+                <p className="text-slate-500 text-sm font-medium uppercase mb-1">Ganhos brutos</p>
+                <p className="text-2xl font-black text-white">R$ 504,00</p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-2xl">
+                <p className="text-slate-500 text-sm font-medium uppercase mb-1">Combustível</p>
+                <p className="text-2xl font-black text-red-400">- R$ 80,00</p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-2xl">
+                <p className="text-slate-500 text-sm font-medium uppercase mb-1">Alimentação</p>
+                <p className="text-2xl font-black text-red-400">- R$ 7,00</p>
+              </div>
+              <div className="p-4 bg-slate-900/50 rounded-2xl">
+                <p className="text-slate-500 text-sm font-medium uppercase mb-1">Aluguel</p>
+                <p className="text-2xl font-black text-red-400">- R$ 124,43</p>
+              </div>
+            </div>
+            <div className="p-6 bg-emerald-500/10 border-2 border-emerald-500/30 rounded-2xl">
+              <p className="text-slate-500 text-sm font-medium uppercase mb-1">Lucro líquido</p>
+              <p className="text-4xl font-black text-emerald-400">R$ 292,57</p>
+            </div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+            <div className="p-6 bg-red-500/5 border border-red-500/20 rounded-2xl">
+              <p className="text-red-400 font-black text-lg mb-2">Sem controle</p>
+              <p className="text-slate-400 font-medium">Entrou R$ 504 e parece que o dia foi ótimo.</p>
+            </div>
+            <div className="p-6 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl">
+              <p className="text-emerald-400 font-black text-lg mb-2">Com o DriverFlow</p>
+              <p className="text-slate-400 font-medium">Você vê que sobraram R$ 292,57 líquidos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. BLOCO DE DEPOIMENTO */}
       <section className="py-8 px-6 relative bg-slate-950 border-t border-slate-900">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-5xl font-black mb-4 text-white uppercase tracking-tighter">Quem usa, não volta atrás</h2>
+            <h2 className="text-3xl md:text-5xl font-black mb-4 text-white uppercase tracking-tighter">Quem começa a acompanhar de verdade, não quer mais voltar para o escuro</h2>
             <div className="flex justify-center gap-1.5 mb-3">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={24} className="text-yellow-400 fill-yellow-400" />
               ))}
             </div>
-            <p className="text-slate-500 text-xl font-medium">Histórias reais de quem profissionalizou sua gestão.</p>
           </div>
           
           <div className="grid grid-cols-1 gap-6">
@@ -528,10 +572,14 @@ export default function App() {
               </motion.div>
             ))}
           </div>
+          
+          <div className="mt-8 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl text-center">
+            <p className="text-slate-300 text-lg font-medium italic">"Antes eu olhava só o bruto e achava que estava tudo certo. Agora eu vejo quanto realmente sobrou e quanto falta para minha meta."</p>
+          </div>
         </div>
       </section>
 
-      {/* 11. PARA QUEM É */}
+      {/* 12. PARA QUEM É */}
       <section className="py-8 px-6 bg-slate-900/40 relative border-t border-slate-900">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/5 to-transparent" />
         <div className="max-w-xl mx-auto relative z-10">
@@ -540,8 +588,9 @@ export default function App() {
             {[
               "Motoristas com carro próprio",
               "Motoristas com carro alugado",
-              "Quem está começando no transporte por aplicativo",
-              "Quem já roda há tempo e quer melhorar seu lucro real",
+              "Quem está começando no app",
+              "Quem já roda há tempo e quer parar de trabalhar no escuro",
+              "Quem quer entender o lucro real e tomar decisões melhores"
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -556,162 +605,71 @@ export default function App() {
         </div>
       </section>
 
-      {/* 12. BÔNUS */}
-      <section className="py-8 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
-        <div className="max-w-xl mx-auto">
-          <div className="text-center mb-8">
-            <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-black uppercase tracking-[0.2em] rounded-full mb-3 border border-emerald-500/20">
-              Presente para você
-            </span>
-            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Bônus Exclusivos</h2>
-          </div>
-          <div className="grid grid-cols-1 gap-4">
-            {[
-              { title: "Bônus 1: Controle de Metas Inteligente", desc: "Defina quanto quer ganhar e o app te diz exatamente o que falta." },
-              { title: "Bônus 2: Relatórios Automáticos", desc: "Veja seu desempenho semanal e mensal sem precisar calcular nada." }
-            ].map((bonus, i) => (
-              <motion.div 
-                key={i}
-                whileHover={{ y: -5 }}
-                className="p-8 bg-slate-900 border border-slate-800 rounded-[2.5rem] relative overflow-hidden group shadow-xl"
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 blur-3xl group-hover:bg-emerald-500/20 transition-all" />
-                <h4 className="text-2xl font-black text-white mb-3 tracking-tight">{bonus.title}</h4>
-                <p className="text-lg text-slate-400 leading-relaxed font-medium">{bonus.desc}</p>
-                <div className="mt-4 flex items-center gap-2 text-emerald-500 font-bold uppercase tracking-widest text-xs">
-                   <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                   Incluso no acesso
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 13. OFERTA */}
       <section id="pricing" className="py-8 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
         <div className="max-w-xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">
-            O valor que você recupera no <br/><span className="text-emerald-400">primeiro dia de uso.</span>
+            O valor que você pode recuperar em clareza <br/><span className="text-emerald-400">começa já no primeiro dia.</span>
           </h2>
-          <p className="text-slate-400 mb-12 text-xl font-medium">Escolha o plano que faz mais sentido para o seu momento.</p>
+          <p className="text-slate-400 mb-12 text-xl font-medium">porque o que destrói seu resultado não é só ganhar menos. É continuar rodando sem saber o que realmente está sobrando.</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Plano Básico */}
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="relative p-10 bg-slate-950 border border-slate-800 rounded-[3rem] flex flex-col group overflow-hidden"
+          <motion.div 
+            whileHover={{ y: -10 }}
+            className="relative p-10 bg-slate-950 border-2 border-emerald-500 rounded-[3rem] shadow-[0_20px_50px_rgba(16,185,129,0.15)] flex flex-col group overflow-hidden max-w-lg mx-auto"
+          >
+            <span className="inline-block px-4 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-black uppercase tracking-widest rounded-full mb-4 border border-emerald-500/20 w-fit mx-auto">
+              Oferta especial
+            </span>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-black mb-4 text-emerald-400 uppercase tracking-widest text-sm">Acesso completo ao DriverFlow</h3>
+              <div className="flex items-baseline gap-1 mb-2 justify-center">
+                <span className="text-2xl font-bold text-slate-500">R$</span>
+                <span className="text-6xl font-black text-white tracking-tighter">19,90</span>
+                <span className="text-slate-500 font-bold ml-1 text-sm uppercase">Pagamento Único</span>
+              </div>
+              <p className="text-slate-400 font-medium">Você recebe acesso vitalício.</p>
+            </div>
+            
+            <ul className="space-y-2.5 mb-8 text-left">
+              {[
+                "Acesso completo ao app",
+                "Dashboard de lucro real",
+                "Registro de ganhos e gastos",
+                "Controle de combustível, alimentação, aluguel e manutenção",
+                "Acompanhamento de metas",
+                "Visão por dia, semana e mês",
+                "Relatórios de desempenho",
+                "Acesso imediato"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-base">
+                  <div className="bg-emerald-500 rounded-full p-1 mt-0.5 shadow-lg shadow-emerald-500/20">
+                    <CheckCircle size={14} className="text-slate-950" />
+                  </div>
+                  <span className="text-slate-100 font-bold">{item}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <motion.a 
+              href="https://pay.cakto.com.br/hrev4wd"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              animate={{ scale: [1, 1.08, 1] }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity, 
+                ease: "easeInOut",
+                repeatType: "reverse"
+              }}
+              className="block text-center w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 blur-3xl -translate-y-1/2 translate-x-1/2" />
-              <div className="mb-8">
-                <h3 className="text-xl font-black mb-4 text-slate-100 uppercase tracking-widest text-sm">Plano Básico</h3>
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-2xl font-bold text-slate-500">R$</span>
-                  <span className="text-6xl font-black text-white tracking-tighter">19,90</span>
-                  <span className="text-slate-500 font-bold ml-1 text-sm uppercase">Pagamento Único</span>
-                </div>
-                <p className="text-slate-400 font-medium text-left">Controle completo.</p>
-              </div>
-              
-              <ul className="space-y-2.5 mb-8 flex-grow text-left">
-                {[
-                  "Acesso completo ao DriverFlow",
-                  "Dashboard de lucro em tempo real",
-                  "Registro de gastos e ganhos",
-                  "Controle de combustível e manutenção",
-                  "Monitoramento de km rodados",
-                  "Relatórios de desempenho",
-                  "Acesso Vitalício"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-base">
-                    <div className="bg-emerald-500/10 rounded-full p-1 mt-0.5">
-                      <CheckCircle size={14} className="text-emerald-500" />
-                    </div>
-                    <span className="text-slate-300 font-medium">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <motion.a 
-                href="https://pay.cakto.com.br/hrev4wd"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                animate={{ scale: [1, 1.08, 1] }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut",
-                  repeatType: "reverse"
-                }}
-                className="block text-center w-full py-5 bg-slate-900 hover:bg-slate-800 text-emerald-400 border border-emerald-500/20 font-black rounded-2xl transition-all shadow-xl"
-              >
-                Quero começar a controlar meus ganhos agora
-              </motion.a>
-            </motion.div>
-
-            {/* Plano Premium */}
-            <motion.div 
-              whileHover={{ y: -10 }}
-              className="relative pt-14 pb-10 px-10 bg-slate-950 border-2 border-emerald-500 rounded-[3rem] shadow-[0_20px_50px_rgba(16,185,129,0.15)] flex flex-col z-10 group overflow-hidden"
-            >
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-emerald-500 text-slate-950 text-[10px] font-black rounded-full uppercase tracking-widest whitespace-nowrap shadow-lg">
-                🚀 MAIS ESCOLHIDO
-              </div>
-              
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-3xl -translate-y-1/2 translate-x-1/2" />
-              
-              <div className="mb-8">
-                <h3 className="text-xl font-black mb-4 text-emerald-400 uppercase tracking-widest text-sm">Plano Premium</h3>
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-2xl font-bold text-slate-500">R$</span>
-                  <span className="text-6xl font-black text-emerald-400 tracking-tighter">27,90</span>
-                  <span className="text-slate-500 font-bold ml-1 text-sm uppercase">Pagamento Único</span>
-                </div>
-                <p className="text-slate-400 font-medium italic text-left">A experiência completa de gestão.</p>
-              </div>
-              
-              <ul className="space-y-2.5 mb-8 flex-grow text-left">
-                {[
-                  "Tudo do plano Básico",
-                  "Metas de lucro avançadas",
-                  "Relatórios completos",
-                  "Dicas inteligentes de economia",
-                  "Suporte prioritário via WhatsApp",
-                  "Acesso antecipado a novas funções",
-                  "Comunidade VIP de motoristas"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-base">
-                    <div className="bg-emerald-500 rounded-full p-1 mt-0.5 shadow-lg shadow-emerald-500/20">
-                      <CheckCircle size={14} className="text-slate-950" />
-                    </div>
-                    <span className="text-slate-100 font-bold">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <motion.a 
-                href="https://pay.cakto.com.br/nqb9269"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ scale: 1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                animate={{ scale: [1, 1.08, 1] }}
-                transition={{ 
-                  duration: 1.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut",
-                  repeatType: "reverse"
-                }}
-                className="block text-center w-full py-5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xl rounded-2xl transition-all shadow-xl shadow-emerald-500/20"
-              >
-                Quero começar a controlar meus ganhos agora
-              </motion.a>
-            </motion.div>
-          </div>
+              Quero começar a controlar meus ganhos agora
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
@@ -731,12 +689,13 @@ export default function App() {
               decoding="async"
             />
           </motion.div>
-          <h2 className="text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tighter text-center">Risco zero por 7 dias</h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-4 text-white uppercase tracking-tighter text-center">Teste sem risco por 7 dias</h2>
           <div className="text-slate-400 leading-relaxed text-xl text-center space-y-2 font-medium mb-6">
-            <p>Se você não tiver mais clareza sobre seus números em uma semana…</p>
+            <p>Use o DriverFlow e veja seus números com mais clareza.</p>
             <p className="text-emerald-400 font-black text-2xl uppercase tracking-tight">
-              A gente devolve o seu dinheiro.
+              Se dentro de 7 dias você sentir que o app não te ajudou a entender melhor seu lucro real, devolvemos seu dinheiro.
             </p>
+            <p className="text-slate-500 font-medium">Risco zero para testar.</p>
           </div>
         </div>
       </section>
@@ -750,11 +709,11 @@ export default function App() {
 
           <div className="space-y-4">
             {[
-              { q: "Preciso entender de finanças?", a: "Absolutamente não. O app foi feito para quem tem rotina corrida. É só lançar os valores e ele faz tudo." },
-              { q: "Tenho que pagar todo mês?", a: "Não. O acesso é único e vitalício. Você paga uma vez e usa para sempre." },
-              { q: "Funciona se eu usar Uber e 99?", a: "Sim! Você pode centralizar todos os seus ganhos de diferentes apps no DriverFlow." },
-              { q: "E se eu não gostar?", a: "Você tem 7 dias de garantia total. Se não gostar, devolvemos 100% sem burocracia." },
-              { q: "Preciso usar todos os dias?", a: "Quanto mais você usa, mais precisão você tem. Mas o ideal é registrar diariamente para ter controle real." }
+              { q: "Preciso entender de finanças?", a: "Não. O app foi feito para facilitar sua rotina e mostrar seus números de forma simples." },
+              { q: "Tenho que pagar todo mês?", a: "Não. O pagamento é único." },
+              { q: "Funciona para Uber e 99?", a: "Sim. Você pode registrar sua operação independentemente da plataforma." },
+              { q: "Preciso usar todos os dias?", a: "Para ter clareza real, o ideal é registrar sua rotina com frequência. O processo é simples e rápido." },
+              { q: "E se eu não gostar?", a: "Você tem 7 dias de garantia." }
             ].map((faq, i) => (
               <details key={i} className="group bg-slate-900/50 border border-slate-800 rounded-[2rem] overflow-hidden hover:border-emerald-500/30 transition-all shadow-lg">
                 <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
@@ -809,7 +768,7 @@ export default function App() {
             Pare de dirigir no <span className="text-red-500">escuro.</span>
           </h2>
           <p className="text-xl md:text-2xl font-bold mb-12 text-slate-400 max-w-lg mx-auto leading-relaxed">
-            Descubra agora quanto você realmente ganha e profissionalize sua jornada.
+            Descubra agora quanto realmente sobra no seu bolso e comece a tomar decisões com mais clareza.
           </p>
           <motion.button 
             onClick={scrollToPricing}
@@ -825,8 +784,11 @@ export default function App() {
             }}
             className="w-full py-7 px-12 bg-emerald-500 text-slate-950 font-black text-2xl rounded-[2.5rem] hover:bg-emerald-400 transition-all shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)] shadow-emerald-500/30"
           >
-            Quero saber quanto realmente estou lucrando
+            Quero ver meu lucro real agora
           </motion.button>
+          <p className="text-sm text-slate-500 font-medium mt-6">
+            Pagamento único • Acesso imediato • Garantia de 7 dias
+          </p>
         </div>
       </section>
 
