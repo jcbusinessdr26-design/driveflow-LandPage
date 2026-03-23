@@ -72,22 +72,26 @@ export default function App() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-4xl md:text-6xl font-black leading-[1.05] mb-4 tracking-tighter">
-              Descubra quanto você <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-200">realmente lucra</span> dirigindo.
+              Descubra se você está <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-200">lucrando de verdade</span> ou só rodando muito
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 mb-5 leading-relaxed font-semibold">
-              O aplicativo de gestão financeira criado para motoristas de aplicativo que querem <span className="text-emerald-400">parar de trabalhar no escuro</span> e finalmente ter controle dos seus ganhos e gastos.
+              O DriverFlow mostra quanto realmente sobra no seu bolso depois de combustível, alimentação, aluguel e outros gastos — por dia, semana e mês.
             </p>
 
             <motion.img 
-              src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773824346/Gemini_Generated_Image_wh36aiwh36aiwh36-_1__hi7qhr.webp"
-              alt="Motorista usando o DriverFlow"
+              src="https://res.cloudinary.com/dynjqdxw8/image/upload/v1774174485/ChatGPT_Image_22_de_mar._de_2026_06_57_20_1_ohhmfm.png"
+              alt="DriverFlow - Controle de lucro"
               className="max-w-md md:max-w-xl mx-auto mb-8 w-full h-auto rounded-[2.5rem] shadow-2xl"
               fetchpriority="high"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             />
+
+            <p className="text-lg text-slate-400 mb-6 font-medium">
+              Veja seu lucro real em segundos, sem precisar fazer conta manual.
+            </p>
 
             <div className="flex flex-col gap-4">
               <motion.button 
@@ -102,18 +106,23 @@ export default function App() {
                   ease: "easeInOut",
                   repeatType: "reverse"
                 }}
-                className="w-full py-5 px-8 bg-emerald-500 text-slate-950 font-black text-xl rounded-2xl hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20 mb-8"
+                className="w-full py-5 px-8 bg-emerald-500 text-slate-950 font-black text-xl rounded-2xl hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20 mb-3"
               >
-                Quero saber quanto realmente estou lucrando
+                Quero ver meu lucro real
               </motion.button>
             </div>
+            
+            <p className="text-sm text-slate-500 font-medium">
+              Pagamento único • Acesso imediato • Garantia de 7 dias
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 2. VSL */}
+      {/* 2. MINI VSL */}
       <section className="py-8 px-6 bg-slate-900/60">
         <div className="max-w-xl mx-auto text-center">
+          <p className="text-lg text-slate-400 mb-6 font-medium">Assista agora e entenda por que faturar não é a mesma coisa que lucrar</p>
           <div className="group relative p-1 bg-gradient-to-b from-slate-800 to-slate-950 rounded-[2.5rem] shadow-2xl shadow-emerald-950/20 mb-8 overflow-hidden">
             <div 
               className="relative aspect-video w-full bg-slate-950 rounded-[2.25rem] border border-slate-800/50 flex items-center justify-center cursor-pointer overflow-hidden"
@@ -152,7 +161,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. BLOCO DE IMPACTO */}
+      {/* 3. BLOCO DE DOR */}
       <section className="py-8 px-6 relative overflow-hidden bg-slate-950">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full -z-10" />
         <div className="max-w-xl mx-auto text-center">
@@ -162,24 +171,87 @@ export default function App() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight text-white uppercase tracking-tighter">
-              Você não precisa trabalhar mais.<br/>
-              <span className="text-red-500">Precisa parar de perder dinheiro sem perceber.</span>
+              Você pode estar rodando muito <br/>
+              <span className="text-red-500">e lucrando pouco.</span>
             </h2>
             <div className="space-y-3 text-xl text-slate-400 leading-relaxed font-medium">
-              <p>O problema não é rodar o dia inteiro.</p>
-              <p>O problema é não saber quanto realmente sobra no final.</p>
-              <div className="p-8 bg-red-500/5 border border-red-500/20 rounded-[2.5rem] mt-6">
-                <p className="text-slate-200">
-                  Sem controle, qualquer valor parece lucro…<br/>
-                  <span className="text-red-400 font-bold">mas os custos vão comendo tudo.</span>
-                </p>
-              </div>
+              <p>Faturamento alto não significa lucro alto</p>
+              <p>Combustível, alimentação e aluguel reduzem o que realmente sobra</p>
+              <p>Sem controle, fica fácil confundir correria com resultado</p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* 4. QUEBRA DE CRENÇA */}
+      {/* 4. BLOCO DE CHOQUE */}
+      <section className="py-8 px-6 bg-slate-900/60 relative overflow-hidden">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-white uppercase tracking-tighter">
+            Uma coisa é o que entra. <br/>
+            <span className="text-emerald-400">Outra é o que sobra.</span>
+          </h2>
+          
+          <motion.img 
+            src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773856069/ChatGPT-Image-18-de-mar.-de-2026_-14_45_41-_1__ggsh6z.webp"
+            alt="Comparação faturamento vs lucro"
+            className="w-full h-auto max-w-lg mx-auto mb-8 rounded-[2.5rem] shadow-2xl border border-slate-800"
+            loading="lazy"
+            decoding="async"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          />
+          
+          <p className="text-xl text-slate-300 font-bold mb-8">
+            Pare de olhar só faturamento. Veja quanto realmente ficou no seu bolso.
+          </p>
+          
+          <motion.button 
+            onClick={scrollToPricing}
+            className="w-full py-4 px-8 bg-emerald-500 text-slate-950 font-black text-xl rounded-2xl hover:bg-emerald-400 transition-all shadow-xl shadow-emerald-500/20"
+          >
+            Quero começar agora
+          </motion.button>
+        </div>
+      </section>
+
+      {/* 5. BLOCO DE REALIDADE */}
+      <section className="py-8 px-6 bg-slate-950 relative overflow-hidden border-t border-slate-900">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-red-500/5 blur-[120px] rounded-full -z-10" />
+        <div className="max-w-xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-black mb-6 leading-tight text-white uppercase tracking-tighter">
+              O problema não é trabalhar muito. <br/>
+              <span className="text-red-500">É não saber quanto realmente sobrou.</span>
+            </h2>
+            <div className="space-y-4 text-xl text-slate-400 leading-relaxed font-medium mb-8">
+              <p>Sem clareza, qualquer valor parece bom no dia.</p>
+              <p>Mas no fim do mês, os custos vão comendo seu resultado sem você perceber.</p>
+              <p className="text-2xl font-black text-white">Você roda, roda, roda…</p>
+              <p className="text-slate-300">e mesmo assim não sabe com certeza:</p>
+            </div>
+            
+            <div className="grid grid-cols-1 gap-3 text-left">
+              {[
+                "quanto lucrou de verdade",
+                "quanto precisa fazer por dia",
+                "se o esforço realmente compensou"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-4 bg-slate-900/50 border border-slate-800 rounded-2xl">
+                  <div className="w-3 h-3 bg-red-500 rounded-full shrink-0" />
+                  <span className="text-slate-200 font-bold">{item}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 6. QUEBRA DE CRENÇA */}
       <section className="py-8 px-6 bg-gradient-to-b from-slate-950 to-slate-900 border-t border-slate-900">
         <div className="max-w-xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight text-center uppercase tracking-tighter">
@@ -224,11 +296,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. ANTES VS DEPOIS */}
+      {/* 7. BLOCO ANTES / DEPOIS */}
       <section className="py-8 px-6 bg-slate-950 relative overflow-hidden text-center">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black mb-8 text-center text-white uppercase tracking-tighter">
-            Como é a sua <span className="text-emerald-400">realidade</span> hoje?
+            Como é a realidade de quem <br/>
+            <span className="text-emerald-400">dirige no escuro?</span>
           </h2>
 
           <div className="grid grid-cols-1 gap-8">
@@ -239,13 +312,15 @@ export default function App() {
               className="p-8 bg-slate-900/50 border border-red-500/20 rounded-[2.5rem] relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-4 bg-red-500/10 text-red-500 text-xs font-black uppercase tracking-widest rounded-bl-2xl">
-                Antes (Sem DriverFlow)
+                Antes do DriverFlow
               </div>
               <ul className="space-y-4 mt-4">
                 {[
-                  "Trabalha o dia inteiro sem saber quanto lucrou",
-                  "Acha que ganhou bem… mas o dinheiro some",
-                  "Não sabe quanto precisa fazer por dia",
+                  "Trabalha o dia inteiro sem saber quanto realmente lucrou",
+                  "Vê o faturamento entrar, mas não sabe quanto sobrou",
+                  "Define metas no chute",
+                  "Perde dinheiro sem perceber",
+                  "Depende de anotações soltas ou da memória"
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 text-slate-400 text-lg font-medium leading-snug">
                     <span className="text-red-500 font-bold">✕</span>
@@ -262,13 +337,15 @@ export default function App() {
               className="p-8 bg-emerald-500/5 border-2 border-emerald-500/30 rounded-[2.5rem] relative overflow-hidden shadow-2xl shadow-emerald-500/10"
             >
               <div className="absolute top-0 right-0 p-4 bg-emerald-500 text-slate-950 text-xs font-black uppercase tracking-widest rounded-bl-2xl">
-                Depois (Com DriverFlow)
+                Com o DriverFlow
               </div>
               <ul className="space-y-4 mt-4">
                 {[
-                  "Sabe exatamente quanto sobrou no final do dia",
-                  "Controla todos os custos",
-                  "Trabalha com meta e estratégia",
+                  "Vê o lucro real depois de todos os custos",
+                  "Sabe exatamente quanto sobrou no dia",
+                  "Acompanha metas com clareza",
+                  "Entende onde o dinheiro está indo",
+                  "Toma decisão com base em números, não em sensação"
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3 text-slate-100 text-lg font-bold leading-snug">
                     <CheckCircle size={20} className="text-emerald-500 shrink-0" />
@@ -281,7 +358,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. APRESENTAÇÃO DO PRODUTO */}
+      {/* 8. BLOCO DE SOLUÇÃO */}
       <section className="py-8 px-6 relative overflow-hidden bg-emerald-500">
         <div className="max-w-xl mx-auto text-slate-950 text-center relative">
           <motion.div
@@ -289,32 +366,35 @@ export default function App() {
             whileInView={{ opacity: 1, scale: 1 }}
           >
             <h2 className="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tighter leading-tight">
-              DriverFlow: controle total <br/>na palma da sua mão
+              O DriverFlow foi criado para <br/>transformar correria em clareza
             </h2>
-            <div className="text-xl md:text-2xl font-bold mb-8 leading-relaxed text-slate-900/80 space-y-2">
-              <p>O DriverFlow foi criado para transformar seus dados em clareza.</p>
-              <p className="font-black text-slate-950">Sem planilhas. Sem conta manual. Sem complicação.</p>
+            <div className="text-xl md:text-2xl font-bold mb-4 leading-relaxed text-slate-900/80 space-y-2">
+              <p>Sem planilha.</p>
+              <p>Sem conta manual.</p>
+              <p className="font-black text-slate-950">Sem complicação.</p>
             </div>
+            <p className="text-lg text-slate-900/80 font-medium">
+              Com poucos minutos por dia, você registra seus números e enxerga o que realmente importa: quanto ficou no seu bolso.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 7. BENEFÍCIOS */}
+      {/* 9. BLOCO DE BENEFÍCIOS */}
       <section className="py-8 px-6 bg-slate-950 overflow-hidden relative border-t border-slate-900">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black mb-8 text-center text-white uppercase tracking-tighter">
-            Trabalhe com clareza, <br /><span className="text-emerald-400">lucro e estratégia.</span>
+            O que você consegue ver <br /><span className="text-emerald-400">com o DriverFlow</span>
           </h2>
           <div className="space-y-3">
             {[
-              "Veja quanto realmente sobrou depois de todos os custos",
-              "Entenda quanto o combustível está impactando seu lucro",
-              "Saiba exatamente quanto falta para bater sua meta",
-              "Descubra quanto você ganha por km rodado",
-              "Tenha todos os seus gastos organizados em um só lugar",
-              "Veja rapidamente se o dia valeu a pena financeiramente",
-              "Pare de depender de anotações soltas ou planilhas confusas",
+              "Quanto realmente sobrou depois de todos os custos",
+              "Quanto combustível, alimentação, aluguel e manutenção estão pesando no seu lucro",
+              "Quanto falta para bater sua meta",
+              "Quanto você ganha por km rodado",
+              "Seus ganhos e gastos organizados em um só lugar",
+              "Se o dia valeu a pena financeiramente ou não"
             ].map((benefit, i) => (
               <motion.div 
                 key={i}
@@ -334,12 +414,47 @@ export default function App() {
         </div>
       </section>
 
-      {/* 8. PROVA VISUAL - APP DEMO */}
+      {/* 10. BLOCO DE PROVA */}
       <section className="py-6 px-6 bg-slate-950 overflow-hidden relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full -z-10" />
         <div className="max-w-xl mx-auto text-center">
 
-          <h2 className="text-3xl md:text-4xl font-black mb-10 text-white text-center">Veja como é na prática</h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-10 text-white text-center">Veja na prática como o DriverFlow ajuda no seu dia a dia</h2>
+          
+          <div className="space-y-6 mb-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-left p-6 bg-slate-900/50 border border-slate-800 rounded-[2rem]"
+            >
+              <h3 className="text-xl font-black text-white mb-2">Lucro líquido + meta</h3>
+              <p className="text-slate-400 font-medium">Veja quanto realmente sobrou no mês e quanto falta para atingir sua meta.</p>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-left p-6 bg-slate-900/50 border border-slate-800 rounded-[2rem]"
+            >
+              <h3 className="text-xl font-black text-white mb-2">Ganhos x gastos / Produtividade</h3>
+              <p className="text-slate-400 font-medium">Entenda seus ganhos, gastos e indicadores de produtividade de forma visual.</p>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-left p-6 bg-slate-900/50 border border-slate-800 rounded-[2rem]"
+            >
+              <h3 className="text-xl font-black text-white mb-2">Lançamentos do dia</h3>
+              <p className="text-slate-400 font-medium">Registre cada dia e veja o lucro líquido de cada operação.</p>
+            </motion.div>
+          </div>
+          
           <motion.img 
             src="https://res.cloudinary.com/dynjqdxw8/image/upload/f_auto,q_auto/v1773856069/ChatGPT-Image-18-de-mar.-de-2026_-14_45_41-_1__ggsh6z.webp"
             alt="Dashboard DriverFlow"
